@@ -9,12 +9,26 @@ public class LogAnalyzer
     /*
      * 1) The busiest times of the day is at 18H, 10H and 14H
      * 
-     * 
+     * 5) int[] counts; and boolean[] machines;
+     * 7) 20 elements, objects
+     * 8) double[] prices = new double[];
+     * 11) public void printGreater(double marks, double mean) {
+            for(index = 0; index <= marks.length; index++) {
+                if(marks[index] > mean) {
+            System.out.println(marks[index]);
+            
+        12) 
+
      */
     
     // #2 and #3
     private String[] people;
     private boolean[] vacant;
+    
+    // #6
+    private String[] ticketMachine;
+    
+
     // Where to calculate the hourly access counts.
     private int[] hourCounts;
     // Use a LogfileReader to access the data.
@@ -33,6 +47,17 @@ public class LogAnalyzer
         // #2 and #3
         reader = new LogfileReader();
         people = new String[2]; // paramater 2 is just sample so it compiles
+        
+        // #6
+        double[] readings;
+        readings = new double[60];
+        
+        String[] urls;
+        urls = new String[90];
+        
+        ticketMachine = new String[5];
+        
+        // #
     }
 
     /**
@@ -66,5 +91,16 @@ public class LogAnalyzer
     public void printData()
     {
         reader.printData();
+    }
+    
+    // # 13
+    public int numberOfAccesses(){
+        int total = 0;
+        
+        for (int count : hourCounts) {
+            total += count;
+        }
+        
+        return total;
     }
 }

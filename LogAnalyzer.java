@@ -6,11 +6,20 @@
  */
 public class LogAnalyzer
 {
+    /*
+     * 1) The busiest times of the day is at 18H, 10H and 14H
+     * 
+     * 
+     */
+    
+    // #2 and #3
+    private String[] people;
+    private boolean[] vacant;
     // Where to calculate the hourly access counts.
     private int[] hourCounts;
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
-
+    
     /**
      * Create an object to analyze hourly web accesses.
      */
@@ -20,7 +29,10 @@ public class LogAnalyzer
         // access counts.
         hourCounts = new int[24];
         // Create the reader to obtain the data.
+        
+        // #2 and #3
         reader = new LogfileReader();
+        people = new String[2]; // paramater 2 is just sample so it compiles
     }
 
     /**

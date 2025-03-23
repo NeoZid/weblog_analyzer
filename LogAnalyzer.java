@@ -103,4 +103,30 @@ public class LogAnalyzer
         
         return total;
     }
+    
+    // #15
+    public void busiestHour(){
+        int firstHour = hourCounts[0];
+        int busiestHour = 0;
+        for (int i = 1; i < hourCounts.length; i++) {
+            if (hourCounts[i] > firstHour){
+                firstHour = hourCounts[i];
+                busiestHour = i;
+            }
+        }
+        System.out.println("The busiest hour is:"+ busiestHour);
+    }
+    
+    // #16
+    public void quietestHour(){
+        int firstHour = hourCounts[0];
+        int quietestHour = 0;
+        for (int i = 1; i < hourCounts.length; i++) {
+            if (hourCounts[i] < firstHour){
+                firstHour = hourCounts[i];
+                quietestHour = i;
+            }
+        }
+        System.out.println("The busiest hour is:"+ quietestHour);
+    }
 }
